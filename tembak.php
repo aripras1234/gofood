@@ -1,5 +1,5 @@
 <?php
-date_default_timezone_set('Asia/Jakarta');
+date_default_timezone_set('Asia/bandung');
 include "function.php";
 echo color("red"," ===========================\n");
 echo color("red","| Claim Voucher Gojek|\n");
@@ -55,13 +55,13 @@ echo " ===========================\n";
         echo color("green","+] Your access token : ".$token."\n\n");
         save("token.txt",$token);
         echo color("red","\n===========(REDEEM VOUCHER)===========");
-        echo "\n".color("yellow","!] Claim voc GOFOODSANTUY19");
+        echo "\n".color("yellow","!] Claim voc cobagofood2206");
         echo "\n".color("yellow","!] Please wait");
         for($a=1;$a<=3;$a++){
         echo color("yellow",".");
         sleep(1);
         }
-        $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"GOFOODSANTAI19"}');
+        $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"pesangofood2206"}');
         $message = fetch_value($code1,'"message":"','"');
         if(strpos($code1, 'Promo kamu sudah bisa dipakai')){
         echo "\n".color("green","+] Message: ".$message);
